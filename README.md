@@ -73,7 +73,7 @@ Replace **`src/styles/design-tokens.css`**. It has two layers:
 1. `--palette-*`: raw values taken from the design system.
 2. Semantic roles such as `--color-bg`, `--color-text`, `--color-accent`, `--font-display`, `--space-*` and `--radius-*`.
 
-Component CSS reads only the semantic roles, so swapping the palette restyles the whole site. Dark mode overrides live under `[data-theme="dark"]`.
+Component CSS reads only the semantic roles, so swapping the palette restyles the whole site. Dark mode overrides live under `[data-theme="dark"]`. **Dark is the default theme**: first-time visitors get it whatever their system setting, and the `[ Light ]` toggle switches and remembers their choice. To change the default, edit `DEFAULT_DARK` in `src/context/ThemeContext.jsx` and the matching line in the theme script in `index.html`.
 
 Type is **Archivo**, a variable-width grotesk; the name and titles are set wide at 112%. **JetBrains Mono** is used for all data (dates, IDs, labels, links). Both load from Google Fonts in `index.html`.
 

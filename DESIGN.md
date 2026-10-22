@@ -62,7 +62,7 @@ The page reads like the data sheet for a person: every claim sits in a ruled cel
 | `--color-link` | forest | underlined mono links |
 | `--color-highlight` | yellow | competition result chip |
 
-Dark mode (`[data-theme="dark"]`) swaps to a night canvas; lime stays the same.
+Dark mode (`[data-theme="dark"]`) swaps to a night canvas; lime stays the same. Dark is the default theme; the toggle switches to light and remembers the choice.
 
 ## 3. Typography
 

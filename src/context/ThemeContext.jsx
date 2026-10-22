@@ -3,12 +3,11 @@ import { useLocalStorage } from "../hooks/useLocalStorage.js";
 
 const ThemeContext = createContext(null);
 
-function getSystemDark() {
-  return window.matchMedia("(prefers-color-scheme: dark)").matches;
-}
+// Dark is the default; a visitor's own choice from the theme toggle is remembered and wins
+const DEFAULT_DARK = true;
 
 export function ThemeProvider({ children }) {
-  const [isDark, setIsDark] = useLocalStorage("theme-dark", getSystemDark());
+  const [isDark, setIsDark] = useLocalStorage("theme-dark", DEFAULT_DARK);
 
   useEffect(() => {
     const root = document.documentElement;

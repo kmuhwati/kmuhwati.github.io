@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f3f5f1" />
+    <meta name="theme-color" content="#0e0f0c" />
     <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -47,7 +47,7 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@400;500&display=swap"
     />
 
-    <!-- Apply the saved theme before first paint to avoid a light/dark flash -->
+    <!-- Apply the theme before first paint to avoid a flash: dark unless the visitor picked light -->
     <script>
       (function () {
         var dark;
@@ -56,7 +56,7 @@
           dark = stored !== null ? JSON.parse(stored) : undefined;
         } catch (e) {}
         if (typeof dark !== "boolean") {
-          dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          dark = true;
         }
         document.documentElement.dataset.theme = dark ? "dark" : "light";
       })();
