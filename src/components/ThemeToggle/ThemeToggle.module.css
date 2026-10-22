@@ -1,0 +1,11 @@
+.toggle {
+  min-height: var(--icon-button);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  white-space: pre;
+}
+
+.toggle:hover {
+  color: var(--color-link);
+}

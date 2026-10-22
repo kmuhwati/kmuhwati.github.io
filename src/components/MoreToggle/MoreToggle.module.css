@@ -1,0 +1,17 @@
+.wrap {
+  display: flex;
+  margin-top: var(--space-5);
+}
+
+.button {
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  transition: border-color var(--transition);
+}
+
+.button:hover {
+  border-color: var(--color-border-strong);
+}

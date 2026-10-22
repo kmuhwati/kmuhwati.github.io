@@ -1,0 +1,26 @@
+/* Stack as a mono data line: "SQL  dbt  Tableau" */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  font-family: var(--font-mono);
+  color: var(--color-text);
+}
+
+.tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-1);
+}
+
+.md {
+  font-size: var(--text-sm);
+}
+
+.sm {
+  font-size: var(--text-xs);
+}
+
+.note {
+  color: var(--color-text-muted);
+}

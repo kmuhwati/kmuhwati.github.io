@@ -1,0 +1,37 @@
+.card {
+  border-radius: var(--radius-card);
+  min-width: 0;
+}
+
+.elevated {
+  background: var(--color-bg-elevated);
+}
+
+.outline {
+  background: var(--color-bg);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.inverse {
+  background: var(--color-inverse-card);
+  color: var(--color-inverse-text);
+}
+
+.pad-md {
+  padding: var(--space-5);
+}
+
+.pad-lg {
+  padding: var(--space-5);
+}
+
+.pad-none {
+  padding: 0;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .pad-lg {
+    padding: var(--space-6);
+  }
+}

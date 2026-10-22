@@ -1,0 +1,12 @@
+.frame {
+  width: 100%;
+  max-width: 36rem;
+  height: 36rem;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-bg-elevated);
+}
+
+.fallback {
+  margin-top: var(--space-5);
+}

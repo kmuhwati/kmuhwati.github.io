@@ -1,0 +1,69 @@
+/* Square, ruled controls */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--icon-button);
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  font-weight: var(--weight-medium);
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.icon {
+  display: inline-flex;
+  font-family: var(--font-mono);
+}
+
+.icon svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Ink block */
+.primary {
+  background: var(--color-action);
+  color: var(--color-action-contrast);
+}
+
+.primary:hover {
+  background: transparent;
+  color: var(--color-text);
+}
+
+/* Outline */
+.secondary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.secondary:hover {
+  border-color: var(--color-border-strong);
+}
+
+/* Bare mono link */
+.text {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.onAccent {
+  background: var(--color-action);
+  color: var(--color-action-contrast);
+}

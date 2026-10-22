@@ -1,0 +1,71 @@
+.frame {
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--color-accent-subtle);
+  border: var(--border-width) solid var(--color-border);
+}
+
+.square {
+  width: var(--icon-button);
+  height: var(--icon-button);
+  border-radius: var(--radius-card);
+}
+
+.circle {
+  width: var(--space-8);
+  height: var(--space-8);
+  border-radius: var(--radius-pill);
+}
+
+/* Row thumbnail (credentials): fills its grid column, 4:3 */
+.thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+}
+
+/* Card cover: full width, landscape, corners set by the card */
+.cover {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 0;
+  border-bottom: var(--border-width) solid var(--color-border);
+  border-radius: 0;
+}
+
+.cover .image {
+  object-fit: cover;
+}
+
+.cover .fallback {
+  font-size: var(--text-display-md);
+}
+
+.wide {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  border-radius: 0;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fallback {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-display);
+  color: var(--color-accent-text);
+}
+
+.wide .fallback {
+  font-size: var(--text-display-lg);
+}

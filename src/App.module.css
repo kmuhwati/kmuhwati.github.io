@@ -1,0 +1,14 @@
+.layout {
+  min-height: 100vh;
+}
+
+.column {
+  min-width: 0;
+}
+
+@media (min-width: 1100px) {
+  .layout {
+    display: grid;
+    grid-template-columns: var(--rail-width) minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,33 @@
+.button {
+  position: fixed;
+  right: var(--space-5);
+  bottom: var(--space-5);
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  width: var(--icon-button);
+  height: var(--icon-button);
+  border-radius: var(--radius-pill);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(var(--space-2));
+  transition:
+    opacity var(--transition),
+    transform var(--transition);
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: none;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+}

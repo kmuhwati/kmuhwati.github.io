@@ -1,0 +1,7 @@
+node_modules
+dist
+.env
+.env.local
+public/profile.json
+public/blogs.json
+.DS_Store

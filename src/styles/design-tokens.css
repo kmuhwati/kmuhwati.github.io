@@ -1,0 +1,188 @@
+/**
+ * DESIGN SYSTEM SLOT: "Sage" (spec-sheet edition)
+ * Documented in ../../DESIGN.md. Palette from design-md/wise/DESIGN.md
+ * (sage canvas, ink, lime); component language is a technical data sheet
+ * with results-first figures: ruled tables, mono data, square corners,
+ * square status marks. Lime is only ever a small fill (marks, progress).
+ *
+ * Values marked "derived" are not in the Wise spec.
+ *
+ * Layer 1 (--palette-*) holds raw values.
+ * Layer 2 (--color-*, --font-*, ...) holds semantic roles. Components read layer 2 only.
+ */
+
+:root {
+  /* ---------- Layer 1: palette ---------- */
+  --palette-lime: #9fe870;
+  --palette-lime-pale: #e2f6d5;
+  --palette-ink: #0e0f0c;
+  --palette-forest: #163300;
+  --palette-body: #454745;
+  --palette-mute: #868685;
+  --palette-white: #ffffff;
+  --palette-sage: #e8ebe6;
+  --palette-positive: #2ead4b;
+  --palette-warning: #ffd11a;
+  /* derived */
+  --palette-canvas: #f3f5f1;
+  --palette-mute-strong: #5f615d;
+  --palette-night: #0e0f0c;
+  --palette-night-rail: #161814;
+  --palette-night-surface: #1c1e1a;
+  --palette-night-text: #f3f5f1;
+  --palette-night-body: #c7c9c4;
+  --palette-night-mute: #9a9c97;
+
+  /* ---------- Layer 2: colour roles (light) ---------- */
+  --color-bg: var(--palette-canvas);
+  --color-bg-header: var(--palette-canvas);
+  --color-rail: var(--palette-sage);
+  --color-surface: var(--palette-white);
+  --color-bg-elevated: var(--palette-white);
+  --color-bg-soft: var(--palette-canvas);
+  --color-text: var(--palette-ink);
+  --color-text-body: var(--palette-body);
+  --color-text-muted: var(--palette-mute-strong);
+  --color-text-subtle: var(--palette-mute);
+  --color-rule: var(--palette-ink); /* heavy table rules */
+  --color-border: rgb(14 15 12 / 0.16); /* cell rules */
+  --color-border-soft: rgb(14 15 12 / 0.08);
+  --color-border-strong: var(--palette-ink);
+
+  /* Lime: small square marks and progress fills only */
+  --color-mark: var(--palette-lime);
+  --color-mark-edge: var(--palette-forest); /* 1px outline so lime reads on sage */
+  --color-accent: var(--palette-lime);
+  --color-accent-contrast: var(--palette-ink);
+  --color-accent-pale: var(--palette-lime-pale);
+  --color-accent-subtle: var(--palette-lime-pale);
+  --color-accent-text: var(--palette-forest);
+
+  /* Primary action: ink block, canvas text */
+  --color-action: var(--palette-ink);
+  --color-action-contrast: var(--palette-canvas);
+
+  --color-link: var(--palette-forest);
+  --color-focus: var(--palette-forest);
+  --color-success: var(--palette-positive);
+  --color-highlight: var(--palette-warning);
+  --color-highlight-contrast: var(--palette-ink);
+  --color-backdrop: rgb(14 15 12 / 0.5);
+
+  --color-inverse-bg: var(--palette-ink);
+  --color-inverse-card: var(--palette-ink);
+  --color-inverse-text: var(--palette-white);
+  --color-inverse-muted: rgb(255 255 255 / 0.62);
+  --color-inverse-accent: var(--palette-lime);
+  --color-inverse-border: rgb(255 255 255 / 0.14);
+  --color-on-band: var(--palette-white);
+
+  /* ---------- Type ---------- */
+  --font-display: Archivo, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: Archivo, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-label: var(--font-mono);
+
+  --text-xs: 0.75rem; /* 12 mono labels */
+  --text-sm: 0.8125rem; /* 13 mono data */
+  --text-body-sm: 0.875rem; /* 14 */
+  --text-md: 1rem; /* 16 */
+  --text-title-md: 1.125rem; /* 18 */
+  --text-lg: 1.25rem; /* 20 */
+  --text-display-xs: 1.5rem; /* 24 */
+  --text-display-sm: 2rem; /* 32 */
+  --text-row: clamp(1.125rem, 2vw, 1.375rem); /* block titles */
+  --text-section: clamp(1.75rem, 3.4vw, 2.5rem); /* section titles */
+  --text-figure: clamp(2.5rem, 5vw, 3.75rem); /* evidence figures */
+  --text-mega: clamp(3rem, 7.5vw, 6.5rem); /* the name */
+  --text-display-lg: var(--text-section);
+  --text-contact: clamp(2.5rem, 4.6vw, 4rem); /* contact title: the name must stay on one line */
+  --text-display-md: var(--text-display-sm);
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-display: 500;
+
+  --leading-display: 0.92;
+  --leading-title: 1.25;
+  --leading-body: 1.55;
+
+  --tracking-display: -0.025em;
+  --tracking-title: -0.01em;
+  --tracking-caps: 0.06em;
+  --tracking-tight: -0.03em;
+
+  /* ---------- Space ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-section: clamp(3.5rem, 7vw, 5.5rem);
+
+  /* ---------- Shape: square, like a printed sheet ---------- */
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-pill: 0;
+  --radius-card: 0;
+  --radius-dot: 0; /* status marks are squares */
+
+  --shadow-sm: none;
+  --border-width: 1px;
+  --rule-heavy: 1.5px;
+
+  /* ---------- Layout ---------- */
+  --container: 62rem;
+  --rail-width: 19rem;
+  --header-height: 3.5rem;
+  --icon-button: 2.5rem;
+  --dot-size: 0.5rem; /* square mark */
+  --thumb-width: 7rem;
+  --figure-col: 12rem; /* fits a five-character figure at full size */
+
+  /* ---------- Motion (quiet) ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --transition: 150ms ease;
+  --duration-fast: 250ms;
+  --reveal-duration: 600ms;
+  --reveal-distance: 12px;
+  --stagger: 60ms;
+}
+
+/* Dark theme: derived */
+[data-theme="dark"] {
+  --color-bg: var(--palette-night);
+  --color-bg-header: var(--palette-night);
+  --color-rail: var(--palette-night-rail);
+  --color-surface: var(--palette-night-surface);
+  --color-bg-elevated: var(--palette-night-surface);
+  --color-bg-soft: var(--palette-night);
+  --color-text: var(--palette-night-text);
+  --color-text-body: var(--palette-night-body);
+  --color-text-muted: var(--palette-night-mute);
+  --color-text-subtle: #6f716c;
+  --color-rule: var(--palette-night-text);
+  --color-border: rgb(255 255 255 / 0.16);
+  --color-border-soft: rgb(255 255 255 / 0.08);
+  --color-border-strong: var(--palette-night-text);
+
+  --color-mark-edge: var(--palette-lime);
+  --color-accent-pale: rgb(159 232 112 / 0.14);
+  --color-accent-subtle: rgb(159 232 112 / 0.14);
+  --color-accent-text: var(--palette-lime);
+  --color-action: var(--palette-night-text);
+  --color-action-contrast: var(--palette-night);
+  --color-link: var(--palette-lime);
+  --color-focus: var(--palette-lime);
+  --color-backdrop: rgb(0 0 0 / 0.6);
+  --color-inverse-bg: #070806;
+  --color-inverse-card: var(--palette-night-surface);
+}

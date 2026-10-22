@@ -1,0 +1,66 @@
+.role {
+  font-size: var(--text-row);
+  font-weight: var(--weight-display);
+  line-height: 1.2;
+  letter-spacing: var(--tracking-title);
+}
+
+.org {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-1) var(--space-3);
+  margin-top: 2px;
+  font-weight: var(--weight-medium);
+  color: var(--color-text-body);
+}
+
+.org a {
+  color: var(--color-link);
+  text-underline-offset: 0.25em;
+}
+
+.type {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-muted);
+}
+
+.summary {
+  max-width: 40rem;
+  margin-top: var(--space-2);
+  color: var(--color-text-body);
+}
+
+/* Numbered result lines: 01, 02, 03 in mono */
+.impact {
+  display: grid;
+  max-width: 40rem;
+  margin-top: var(--space-3);
+  padding: 0;
+  list-style: none;
+  counter-reset: impact;
+  border-top: var(--border-width) solid var(--color-border-soft);
+}
+
+.impact li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  padding-block: var(--space-2);
+  border-bottom: var(--border-width) solid var(--color-border-soft);
+  color: var(--color-text);
+  counter-increment: impact;
+}
+
+.impact li::before {
+  content: counter(impact, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  line-height: 2;
+  color: var(--color-text-muted);
+}
+
+.tags {
+  margin-top: var(--space-3);
+}

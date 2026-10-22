@@ -1,0 +1,67 @@
+.grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: background-color var(--transition);
+}
+
+.card:hover {
+  background: var(--color-bg-elevated);
+}
+
+.date {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-display);
+  line-height: var(--leading-title);
+  letter-spacing: var(--tracking-display);
+}
+
+.link {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.link svg {
+  display: inline;
+  width: 1rem;
+  height: 1rem;
+  margin-left: var(--space-1);
+  vertical-align: -0.1em;
+  color: var(--color-text-subtle);
+}
+
+.description {
+  font-size: var(--text-body-sm);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
