@@ -27,7 +27,7 @@ export const profile = {
     "I am a data scientist and Ph.D. student in Computational Sciences and Engineering at Harrisburg University, with an M.S. in Cybersecurity from Yeshiva University. I build fraud and threat detection models, privacy-preserving and federated learning systems, and auditable data pipelines for AI.",
   location: { city: "New York", region: "NY", country: "USA" },
   timeZone: "America/New_York", // IANA zone for the live clock in the hero
-  email: "kmuhwati@mail.yu.edu",
+  email: "KMuhwati@my.harrisburgu.edu",
   phone: "",
   phoneDisplay: "",
   availability: "open",
@@ -48,7 +48,7 @@ export const socials = {
       label: "LinkedIn",
       url: "https://www.linkedin.com/in/kumbirai-muhwati",
     },
-    { id: "email", label: "Email", url: "mailto:kmuhwati@mail.yu.edu" },
+    { id: "email", label: "Email", url: "mailto:KMuhwati@my.harrisburgu.edu" },
   ],
 };
 
