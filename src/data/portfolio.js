@@ -24,7 +24,7 @@ export const profile = {
   role: "Data Scientist, Security Data Science", // the one role this portfolio is for; also the page title
   headline: "Machine learning for fraud, threat and privacy problems, and the data engineering that makes it trustworthy.",
   summary:
-    "I am a data scientist and Ph.D. student in Computational Sciences and Engineering at Harrisburg University, with an M.S. in Cybersecurity from Yeshiva University. I build fraud and threat detection models, privacy-preserving and federated learning systems, and auditable data pipelines for AI.",
+    "Nominated 2026 Cybersecurity Innovator of the Year. I am a data scientist building privacy-preserving and secure machine learning for healthcare and finance: in-enclave LLM fine-tuning on Trusted Execution Environments, federated learning, fraud and threat detection, and auditable data pipelines for AI. I am AI Lead Researcher at UsHealthCloud and hold an M.S. in Cybersecurity from Yeshiva University. I am available for full-time roles: my Ph.D. at Harrisburg University is online and runs alongside full-time work.",
   location: { city: "New York", region: "NY", country: "USA" },
   timeZone: "America/New_York", // IANA zone for the live clock in the hero
   email: "KMuhwati@my.harrisburgu.edu",
@@ -36,7 +36,7 @@ export const profile = {
   googleSiteVerification: "", // the content="..." value from Google Search Console's HTML-tag method
   photo: "profile.jpg", // in public/; used in search structured data (public/og-image.jpg is the share card)
   contactLead:
-    "E-mail is the quickest way to reach me. I am open to data science roles in security, fraud, privacy and AI safety, in New York or remote.",
+    "E-mail is the quickest way to reach me. I am available for full-time data science roles in security, fraud, privacy and AI safety, in New York or remote.",
 };
 
 export const socials = {
@@ -186,7 +186,7 @@ export const education = {
       start: "2026-10",
       end: null, // expected completion October 2031
       location: { city: "Harrisburg", region: "PA", country: "USA" },
-      honors: ["Expected completion: October 2031"],
+      honors: ["Online program, alongside full-time work", "Expected completion: October 2031"],
       coursework: ["CISC 701", "CISC 727-50"],
     },
     {
