@@ -79,8 +79,8 @@
   margin-top: var(--space-6);
 }
 
+/* Headline and summary span the same width as the facts table above them */
 .headline {
-  max-width: 38rem;
   font-size: var(--text-display-xs);
   font-weight: var(--weight-medium);
   line-height: 1.25;
@@ -89,7 +89,6 @@
 }
 
 .summary {
-  max-width: 36rem;
   margin-top: var(--space-3);
   font-size: var(--text-title-md);
   color: var(--color-text-body);
