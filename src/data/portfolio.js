@@ -227,9 +227,66 @@ export const education = {
 export const projects = {
   display: true,
   title: "Projects",
-  lead: "Seven end-to-end projects on public and live data, from raw files to a decision. Every figure comes from the project's own reproducible results.",
+  lead: "Nine end-to-end projects on public and live data, from raw files to a decision; the first two have live demos you can try in the browser. Every figure comes from the project's own reproducible results.",
   initialCount: 3, // projects shown before "View all"
   items: [
+    {
+      id: "phishing-url-detector",
+      name: "Phishing URL detector, tested on sources it never saw",
+      summary:
+        "A LightGBM model that scores a link's phishing risk from its text alone and runs entirely in the browser, with the reasons behind each score.",
+      outcome:
+        "Caught 84% of live phishing links from a fresh OpenPhish feed while wrongly flagging 2.1% of real web pages from sites it never saw.",
+      metric: { value: "84%", label: "live phishing links caught" },
+      role: "Independent project",
+      start: "2026-11",
+      end: "2026-11",
+      problem:
+        "PhiUSIIL, the public phishing URL dataset most tutorials use, has a shortcut: every one of its 134,850 legitimate URLs is a bare https://www. homepage. A model trained the usual way scores 0.999 on it and then flags 99.9% of real web pages as phishing.",
+      approach:
+        "Removed the shortcut at the input: the scheme and www. never reach the model, and 35,002 real page URLs from Common Crawl join the training data. Split by registered domain so no site is on both sides, set the alert level at 1% false positives on validation, and tested on three outside sources. The 35 features are written once in JavaScript and called from the Python pipeline through Node, so the browser scores match LightGBM to 1e-5.",
+      results: [
+        "Live OpenPhish feed: 253 of 300 phishing links caught (95% CI 80 to 88%).",
+        "Wrongly flagged 2.1% of 9,668 Common Crawl pages and 2.5% of 10,000 Tranco top sites, against 99.9% for the naive model.",
+        "ROC AUC 0.90 on PhiUSIIL split by site, against 0.999 for a random split that hides the problem.",
+        "Each score is explained by per-tree path contributions that add up exactly to it.",
+      ],
+      impact:
+        "Shows how a benchmark score can hide a model that fails in deployment, and how to evaluate a security classifier on the data it will actually meet.",
+      skills: ["Python", "LightGBM", "JavaScript", "React", "Model evaluation", "Explainability", "Security ML"],
+      links: [
+        { kind: "demo", label: "Live demo", url: "https://kmuhwati.github.io/phishing-url-detector/" },
+        { kind: "repo", label: "Source", url: "https://github.com/kmuhwati/phishing-url-detector" },
+      ],
+    },
+    {
+      id: "small-count-privacy-audit",
+      name: "Small-count suppression audit: how hidden cells leak",
+      summary:
+        "An interactive audit of the rule that hides counts of 1 to 10 in published tables, on 55 census tables, compared with complementary suppression and differential privacy.",
+      outcome:
+        "Recovered 216 of 1,733 hidden cells (12.5%) exactly, using nothing but the published totals, in 39 of 55 tables.",
+      metric: { value: "216", label: "hidden cells recovered exactly" },
+      role: "Independent project",
+      start: "2026-11",
+      end: "2026-11",
+      problem:
+        "Health agencies and statistics offices blank out small counts so nobody can be singled out, but they still publish row and column totals. A hidden cell that is the only blank in its row equals the total minus the visible cells.",
+      approach:
+        "Built every two-way table over 11 attributes of the UCI Adult census extract (48,842 people), ran a repeated subtraction attack, added greedy complementary suppression, bounded the remaining hidden cells with linear programming, and compared the result with discrete-Laplace differential privacy. The dashboard ports the same code to JavaScript, tested against Python fixtures.",
+      results: [
+        "Raising the threshold from 3 to 20 hides three times as many cells, but the attacker still recovers about 200 at every level.",
+        "Complementary suppression stops exact recovery but leaves 314 small cells pinned to a range narrower than 1 to 10.",
+        "Differential privacy at epsilon 1 costs 0.77 people of error per cell, and the attacker's best guess is exactly right only 46% of the time.",
+      ],
+      impact:
+        "Gives a privacy team evidence for replacing an informal suppression rule with a method whose protection can be stated and audited.",
+      skills: ["Python", "Privacy engineering", "Differential privacy", "Linear programming", "SciPy", "React"],
+      links: [
+        { kind: "demo", label: "Live demo", url: "https://kmuhwati.github.io/small-count-privacy-audit/" },
+        { kind: "repo", label: "Source", url: "https://github.com/kmuhwati/small-count-privacy-audit" },
+      ],
+    },
     {
       id: "financebench-rag",
       name: "Evidence retrieval for financial QA over SEC filings",

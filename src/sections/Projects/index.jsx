@@ -131,7 +131,7 @@ export function Projects({ number }) {
                   </button>
                 )}
                 {project.links?.map((link) => (
-                  <Button key={link.url} href={link.url} variant="secondary" iconEnd="↗">
+                  <Button key={link.url} href={link.url} variant={link.kind === "demo" ? "primary" : "secondary"} iconEnd="↗">
                     {link.label}
                     <span className="visually-hidden"> for {project.name}</span>
                   </Button>
